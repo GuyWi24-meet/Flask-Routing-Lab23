@@ -3,14 +3,22 @@ from flask import Flask, redirect, request, render_template, url_for
 
 app = Flask(  # Create a flask app
     __name__,
-    template_folder='templates',  # Name of html file folder
+    template_folder='templates',
     static_folder='static'  # Name of directory for static files
 )
 
 # Your code should be below
+@app.route('/')
+def index():
+    return render_template('home.html')
 
+@app.route('/cart')
+def cartLink():
+    return render_template('cart.html')
 
-
+@app.route('/product')
+def productLink():
+    return render_template('product.html')
 
 # Your code should be above
 
